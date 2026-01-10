@@ -646,6 +646,49 @@ section {
     color: var(--color-primary);
 }
 
+/* ===== Consulting Section ===== */
+.consulting {
+    background-color: var(--color-bg);
+    padding: var(--spacing-2xl) 0;
+}
+
+.consulting h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.consulting .section-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consulting-detail {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.consulting-note {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 /* ===== Contact Section ===== */
 .contact {
     background-color: var(--color-bg-alt);
