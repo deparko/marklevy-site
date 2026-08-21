@@ -1,0 +1,3 @@
+# macOS Finder metadata — leaks directory listings, never belongs in a public repo
+.DS_Store
+**/.DS_Store

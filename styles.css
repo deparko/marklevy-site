@@ -276,6 +276,10 @@ section p + p { margin-top: 1.1em; }
     border-bottom: 1px solid var(--hairline);
     padding-bottom: 0.9rem;
     margin-bottom: 1.1rem;
+    /* Reserve two lines so the rule and body copy line up across all three
+       cards — one shape line wraps, the others don't. border-box, so the
+       padding and rule are inside the number. */
+    min-height: calc(3.3em + 0.9rem + 1px);
 }
 
 .package-card p:not(.package-shape):not(.package-step) { font-size: 1rem; }
@@ -501,6 +505,8 @@ a.article-card:hover { border-color: var(--accent); }
 
 @media (max-width: 900px) {
     .package-grid { grid-template-columns: 1fr; }
+    /* Stacked — nothing to align against, so drop the reserved line. */
+    .package-shape { min-height: 0; }
 }
 
 @media (max-width: 700px) {
