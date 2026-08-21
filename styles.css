@@ -218,10 +218,24 @@ section p + p { margin-top: 1.1em; }
 
 .packages h2 { margin-bottom: 2.25rem; }
 
+/* Fee policy up front — does the reassurance work the price tags used to. */
+.packages-intro {
+    max-width: var(--measure);
+    margin-bottom: 2.25rem;
+}
+
 .package-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+/* Qualifier block — the filter that replaces price-tag self-selection. */
+.packages-fit {
+    max-width: var(--measure);
+    margin-top: 2rem;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--accent-text);
 }
 
 .package-card {
@@ -233,44 +247,38 @@ section p + p { margin-top: 1.1em; }
     flex-direction: column;
 }
 
-.package-card h3 {
-    font-size: 0.85rem;
+/* Step eyebrow — sequences the ladder now that prices don't. */
+.package-step {
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.9rem;
+    color: var(--accent-text);
+    margin-bottom: 0.6rem;
 }
 
-.package-price {
+/* The package name is the card's visual anchor (it was the price). */
+.package-card h3 {
     font-family: var(--display);
-    font-size: 2.1rem;
+    font-size: 1.55rem;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+/* Shape of the commitment — the honest signal that replaces the number. */
+.package-shape {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted);
     border-bottom: 1px solid var(--hairline);
     padding-bottom: 0.9rem;
     margin-bottom: 1.1rem;
 }
 
-.price-qualifier {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0;
-    margin-top: 0.35rem;
-}
-
-.package-price .price-qualifier { line-height: 1.3; }
-
-.price-unit {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0;
-}
-
-.package-card p:not(.package-price) { font-size: 1rem; }
+.package-card p:not(.package-shape):not(.package-step) { font-size: 1rem; }
 
 .package-note {
     margin-top: auto;
