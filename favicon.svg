@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Mark Levy">
+  <rect width="32" height="32" rx="6" fill="#B0542F"/>
+  <path d="M9 23V9.5l7 8 7-8V23" fill="none" stroke="#F3EDE3" stroke-width="3.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
