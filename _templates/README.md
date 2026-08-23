@@ -33,7 +33,7 @@ Search the new file for `[` and replace all of these:
 | `[Opening paragraph.]` | The actual page. Write in the body of the `<article>`. |
 | `[One-sentence invitation for this profession.]` | The first line of the closer. Example: "If you run a solo law practice and this is the problem you actually have, the next step is a short conversation." |
 
-Leave the "Who this is NOT for" sentence and the `/call/` link exactly as they are.
+Leave the "Who this is NOT for" sentence exactly as it is. The booking link goes to Calendly (`https://calendly.com/mark-marklevy/30min`) — do not point it at an extra site page.
 
 ## 3. Add the URL to the sitemap
 
