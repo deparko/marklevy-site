@@ -501,6 +501,49 @@ a.article-card:hover { border-color: var(--accent); }
     margin-top: 1.5rem;
 }
 
+/* Inner pages (copied from _templates/page.html) ---------------------------------------------- */
+
+.page {
+    padding: 4.5rem 0;
+}
+
+.page h1 {
+    font-size: clamp(1.85rem, 4vw, 2.5rem);
+    font-weight: 800;
+    max-width: 22ch;
+    margin-bottom: 0.75rem;
+}
+
+.page-verified {
+    font-family: var(--display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+}
+
+.page p { max-width: 38em; }
+
+.page-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    margin: 2rem 0;
+}
+
+.page-closer {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--hairline);
+}
+
+.page-not-for {
+    color: var(--muted);
+}
+
 /* Mobile ---------------------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
@@ -510,7 +553,7 @@ a.article-card:hover { border-color: var(--accent); }
 }
 
 @media (max-width: 700px) {
-    section, .hero { padding: 3.25rem 0; }
+    section, .hero, .page { padding: 3.25rem 0; }
 
     /* keep hero + CTA above the fold */
     .hero { padding-top: 2.25rem; }
@@ -518,7 +561,7 @@ a.article-card:hover { border-color: var(--accent); }
     .hero-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
 
     .btn { display: block; text-align: center; }
-    .hero-cta .btn, .contact-cta .btn { width: 100%; }
+    .hero-cta .btn, .contact-cta .btn, .page-cta .btn { width: 100%; }
 
     .about-grid { grid-template-columns: 1fr; gap: 1.75rem; }
     .about-photo { max-width: 190px; }
