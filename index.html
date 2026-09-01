@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Levy | AI Advisor for Principal-Led Firms</title>
-    <meta name="description" content="I work with firms where the revenue runs through one or two people&#39;s judgment. AI put to work behind you — never where your clients see it. Advisory, not tools.">
-    <meta property="og:title" content="Mark Levy | AI Advisor for Principal-Led Firms">
-    <meta property="og:description" content="I work with firms where the revenue runs through one or two people&#39;s judgment. AI put to work behind you — never where your clients see it. Advisory, not tools.">
+    <title>Mark Levy | AI Advisor for Independent Professionals</title>
+    <meta name="description" content="Practical AI advisory for independent professionals and expert-led small businesses. Where AI fits your work, set up privately, on accounts you own.">
+    <meta name="theme-color" content="#F3EDE3">
+    <meta property="og:title" content="Mark Levy | AI Advisor for Independent Professionals">
+    <meta property="og:description" content="Practical AI advisory for independent professionals and expert-led small businesses. Where AI fits your work, set up privately, on accounts you own.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.marklevy.ai/">
+    <meta property="og:site_name" content="Mark Levy">
     <meta property="og:image" content="https://www.marklevy.ai/images/mark-levy-headshot.jpg">
+    <meta property="og:image:alt" content="Portrait of Mark Levy">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mark Levy | AI Advisor for Principal-Led Firms">
-    <meta name="twitter:description" content="I work with firms where the revenue runs through one or two people&#39;s judgment. AI put to work behind you — never where your clients see it. Advisory, not tools.">
+    <meta name="twitter:title" content="Mark Levy | AI Advisor for Independent Professionals">
+    <meta name="twitter:description" content="Practical AI advisory for independent professionals and expert-led small businesses. Where AI fits your work, set up privately, on accounts you own.">
     <meta name="twitter:image" content="https://www.marklevy.ai/images/mark-levy-headshot.jpg">
     <link rel="canonical" href="https://www.marklevy.ai/">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -24,12 +27,34 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://www.marklevy.ai/#website",
+          "url": "https://www.marklevy.ai/",
+          "name": "Mark Levy",
+          "description": "AI advisory for independent professionals and expert-led small businesses.",
+          "inLanguage": "en-US",
+          "publisher": { "@id": "https://www.marklevy.ai/#mark" }
+        },
+        {
           "@type": "Person",
           "@id": "https://www.marklevy.ai/#mark",
           "name": "Mark Levy",
-          "jobTitle": "AI Advisor for Principal-Led Firms",
+          "jobTitle": "AI Advisor for Independent Professionals and Expert-Led Small Businesses",
+          "description": "Mark Levy helps independent professionals and expert-led small businesses put AI to work — research, writing, document work, knowledge systems, and workflow design — without giving up judgment, privacy, or control.",
           "url": "https://www.marklevy.ai/",
           "image": "https://www.marklevy.ai/images/mark-levy-headshot.jpg",
+          "email": "mailto:mark@marklevy.ai",
+          "worksFor": { "@id": "https://www.marklevy.ai/#practice" },
+          "knowsAbout": [
+            "AI adoption for professional services",
+            "AI workflow design",
+            "Generative AI for research, writing, and document work",
+            "Knowledge management and personal knowledge systems",
+            "Private and local AI",
+            "AI privacy and confidentiality for professionals",
+            "ChatGPT and Claude for business use",
+            "Software development and product management"
+          ],
           "sameAs": [
             "https://www.linkedin.com/in/markolevy/",
             "https://devops.com/author/mark-levy/",
@@ -39,15 +64,36 @@
         {
           "@type": ["ProfessionalService", "Service"],
           "@id": "https://www.marklevy.ai/#practice",
-          "name": "Mark Levy — AI advisory for solo professional practices",
+          "name": "Mark Levy — AI advisory for independent professionals and expert-led small businesses",
           "url": "https://www.marklevy.ai/",
-          "description": "I work with firms where the revenue runs through one or two people&#39;s judgment. AI put to work behind you — never where your clients see it. Advisory, not tools.",
+          "description": "Practical AI advisory for independent professionals and expert-led small businesses. Where AI fits your work, set up privately, on accounts you own.",
           "founder": { "@id": "https://www.marklevy.ai/#mark" },
           "provider": { "@id": "https://www.marklevy.ai/#mark" },
+          "serviceType": [
+            "AI advisory",
+            "AI workflow consulting",
+            "AI adoption strategy",
+            "AI tool selection",
+            "Private and local AI advisory"
+          ],
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Independent professionals and expert-led small businesses"
+          },
           "areaServed": [
             { "@type": "Country", "name": "United States" },
             { "@type": "AdministrativeArea", "name": "Southern California" }
           ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.marklevy.ai/#webpage",
+          "url": "https://www.marklevy.ai/",
+          "name": "Mark Levy | AI Advisor for Independent Professionals",
+          "isPartOf": { "@id": "https://www.marklevy.ai/#website" },
+          "about": { "@id": "https://www.marklevy.ai/#practice" },
+          "primaryImageOfPage": "https://www.marklevy.ai/images/mark-levy-headshot.jpg",
+          "inLanguage": "en-US"
         }
       ]
     }
@@ -57,15 +103,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation — keep in lockstep with who-i-help/, how-i-help/, about/, _templates/page.html -->
+    <nav class="nav" aria-label="Primary">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Mark Levy</a>
+            <a href="/" class="nav-logo" aria-current="page">Mark Levy</a>
             <div class="nav-links">
-                <a href="/#how-i-help">How I Help</a>
-                <a href="/#about">About</a>
+                <a href="/who-i-help/">Who I Help</a>
+                <a href="/how-i-help/">How I Help</a>
+                <a href="/about/">About</a>
                 <a href="/#writing">Writing</a>
-                <a href="/#speaking">Speaking</a>
                 <a href="/#contact">Contact</a>
             </div>
         </div>
@@ -74,28 +122,39 @@
     <!-- Hero -->
     <header class="hero">
         <div class="container">
-            <p class="eyebrow">Builder · Explainer · System Thinker</p>
-            <h1 class="hero-title">You built a practice on your judgment. AI doesn't change that — <span class="hero-accent">it raises the stakes.</span></h1>
-            <!-- ICP: lead with business shape, never a vertical list (business-strategy.md §1,
-                 website-claude-code-brief.md line 10, SEO-STRATEGY.md §6). Professions are named
-                 once, low on the page, in the "Who this is built for" block — recognition, not
-                 positioning. Do not reintroduce a vertical list here. -->
+            <!-- Category eyebrow (2026-09-01). The persona line ("Builder · Explainer · System
+                 Thinker") moved to the footer: STYLE-GUIDE §2 calls it a posture, not a topic,
+                 and the reader needs the category in the first line, not the persona. -->
+            <p class="eyebrow">AI advisory for independent professionals and expert-led small businesses</p>
+            <h1 class="hero-title">Clients pay you for the work only you can do. <span class="hero-accent">Most of your week goes to everything around it.</span></h1>
+            <!-- ICP: the umbrella is "independent professionals and expert-led small businesses"
+                 (positioning decision 2026-09-01, logged in business-strategy.md). Professions are
+                 named on /who-i-help/ and once in the "Who I work with" block below — as examples,
+                 never as the definition of the market. Do not narrow this to a vertical list and
+                 do not broaden it to generic "small business." -->
+            <!-- Core vs. context (Mark, 2026-09-01): the positioning is workflow analysis and
+                 back-office routines, not writing help. Lead with the method — map the work, find
+                 the waste, automate the context, keep the core — and keep the task areas as
+                 examples lower on the page. Do not let the subhead collapse back into a task list. -->
             <p class="hero-subtitle">
-                I work with firms where the revenue runs through one or two people's judgment.
-                Usually yours. My job is getting what's in your head into a form that works when
-                you're not in the room — without putting a single client record at risk.
+                Every expert business has a core — the judgment clients pay for — and a context:
+                the research, the drafting, the follow-up, the document grind around it. I help
+                independent professionals and expert-led small businesses map how the work really
+                happens, find the waste, and turn the context into routines that run behind you and
+                stop for your yes. You keep the core.
             </p>
             <div class="hero-cta">
                 <a href="https://calendly.com/mark-marklevy/30min" class="btn btn-primary">Book a free 20-minute conversation</a>
-                <p class="hero-secondary">Or start with an <a href="#how-i-help">AI Clarity Session</a> — ninety minutes and a written roadmap for your practice.</p>
+                <p class="hero-secondary">Or start with an <a href="#how-we-work">AI Clarity Session</a> — ninety minutes and a written roadmap for your business.</p>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
     <!-- The problem -->
-    <section class="problem">
+    <section class="problem" aria-labelledby="problem-heading">
         <div class="container">
+            <h2 id="problem-heading" class="visually-hidden">The problem</h2>
             <p class="problem-lead">You've used ChatGPT. Some days it feels like a superpower. Some days it feels like the thing that quietly replaces you.</p>
             <p>
                 Meanwhile the questions pile up and nobody around you has real answers.
@@ -104,11 +163,57 @@
                 Is your competitor down the street already doing this?
             </p>
             <p>
-                You're not behind because you're not smart enough. You're a one-person
-                enterprise — you carry a firm's worth of liability with no IT department,
-                no compliance officer, and no time to become a technologist.
-                You need a guide, not another tool.
+                You're not behind because you're not smart enough. Whether you work alone or run a
+                firm of twelve, you carry a company's worth of liability with no IT department, no
+                compliance officer, and no time to become a technologist. A course won't settle
+                any of this, and neither will another demo. The question is where AI fits in
+                <em>your</em> work and where it should stay out — and answering it takes someone who
+                has looked hard at both.
             </p>
+        </div>
+    </section>
+
+    <!-- What I help with -->
+    <section id="what-i-help-with" class="areas">
+        <div class="container">
+            <p class="eyebrow">What I help with</p>
+            <h2>Automate the context. Keep the core.</h2>
+            <p class="areas-intro">
+                We start with a map of how your work actually moves — from "yes" to "paid," with
+                the waits timed. The waits are where the money leaks. Then the repeatable parts
+                become routines: AI does the gathering and the first draft, drops the result in a
+                folder you control, and waits for your approval. Some of the places that shows up:
+            </p>
+            <ul class="areas-list">
+                <li><strong>Research and analysis.</strong> Reading a stack of source material, pulling out what matters, and showing its work so you can check it.</li>
+                <li><strong>Writing and client communication.</strong> First drafts in your voice — letters, memos, proposals, follow-ups — that wait for your edit before anyone sees them.</li>
+                <li><strong>Document-heavy work.</strong> Contracts, reports, filings, plans: summarized, compared, and checked against your own standards.</li>
+                <li><strong>Knowledge management.</strong> Your notes, files, and past work made searchable, so the answer you gave three years ago is there when you need it again.</li>
+                <li><strong>Meeting preparation.</strong> Everything you know about a client, gathered before the call instead of after it.</li>
+                <li><strong>Tools, routines, and automation.</strong> Which subscription, configured how, on accounts you own — and a recurring job set up so it does its part and stops at your approval.</li>
+                <li><strong>Private and local AI.</strong> When confidential work shouldn't touch a cloud service at all, and what to run instead.</li>
+            </ul>
+            <p class="section-link"><a href="/how-i-help/">How I help, in detail →</a></p>
+        </div>
+    </section>
+
+    <!-- Who I work with -->
+    <section id="who-i-work-with" class="who">
+        <div class="container">
+            <p class="eyebrow">Who I work with</p>
+            <h2>Independent professionals and expert-led small businesses.</h2>
+            <p>
+                Consultants, advisors, attorneys, CPAs, coaches, recruiters, creative and
+                entertainment professionals, fractional executives, real-estate professionals, and
+                the boutique firms built around people like them. Different fields, one shape:
+                you're established, your clients pay for what you know and how you judge, and nobody
+                else in the building is going to figure out AI for you.
+            </p>
+            <p>
+                If the value of your business lives in your expertise, your judgment, your
+                relationships, or the work you create, this is built for you.
+            </p>
+            <p class="section-link"><a href="/who-i-help/">Who I help, by profession →</a></p>
         </div>
     </section>
 
@@ -117,7 +222,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-photo">
-                    <img src="./images/mark-levy-headshot.jpg" alt="Mark Levy" class="headshot">
+                    <img src="/images/mark-levy-headshot-380.jpg" alt="Portrait of Mark Levy" class="headshot" width="380" height="340" loading="lazy" decoding="async">
                 </div>
                 <div class="about-text">
                     <p class="eyebrow">Why me</p>
@@ -130,9 +235,9 @@
                         ones who protect their judgment and point the technology at everything else.
                     </p>
                     <p>
-                        I run a solo practice myself, and I do this for a living — so I'll tell you
-                        plainly: my job is to make AI useful to <em>your</em> practice, in your
-                        language, without putting your clients' data or your name at risk.
+                        I run an independent practice myself, and I do this for a living — so I'll
+                        tell you plainly: my job is to make AI useful to <em>your</em> business, in
+                        your language, without putting your clients' information or your name at risk.
                     </p>
                     <!-- Compliance/governance claim (2026-08-31). Not "software security" — that
                          over-claims a specialty and under-claims the real one. The work was software
@@ -144,15 +249,16 @@
                         I've built software for internet startups and for highly regulated banks.
                         Security, compliance, and governance were never an afterthought in that work —
                         they were built into how it got delivered. That discipline comes with me to
-                        your practice.
+                        your business.
                     </p>
                     <!-- Credentials pointer. STYLE-GUIDE §2: the LinkedIn profile carries the formal
                          credentials so the page never has to. Disarm, then hand off — do not expand
                          this into a résumé block. -->
                     <p class="about-more">
-                        If you want the formal version — roles, companies, the whole arc — it's on
+                        How I work, and why: <a href="/about/">About</a>. The formal version — roles,
+                        companies, the whole arc — is on
                         <a href="https://www.linkedin.com/in/markolevy/" target="_blank" rel="noopener">LinkedIn</a>.
-                        This page is about your practice, not mine.
+                        This page is about your business, not mine.
                     </p>
                 </div>
             </div>
@@ -160,7 +266,7 @@
     </section>
 
     <!-- How we work together -->
-    <section id="how-i-help" class="packages">
+    <section id="how-we-work" class="packages">
         <div class="container">
             <h2>How we work together</h2>
             <p class="packages-intro">
@@ -168,7 +274,7 @@
                 how deep you want to go. Each one is a
                 <strong>fixed fee, agreed before any work starts</strong> — no hourly billing, no
                 meter running, no invoice you didn't see coming. We settle the number on our call,
-                once I understand your practice. Most people start at the top of this list.
+                once I understand your business. Most people start at the top of this list.
             </p>
             <div class="package-grid">
                 <div class="package-card">
@@ -177,9 +283,11 @@
                     <p class="package-shape">Ninety minutes, plus a written roadmap</p>
                     <p>
                         Ninety minutes, one-on-one, then a written roadmap: where AI genuinely helps
-                        <em>your</em> practice, what it threatens, what to ignore, and the privacy
-                        ground rules for your profession. You leave with a plan whether or not we
-                        ever work together again.
+                        <em>your</em> business, what it threatens, what to ignore, and the privacy
+                        ground rules for your profession — built from a walk through how your work
+                        actually moves, so the roadmap names the first routines to build, not just
+                        the tools to buy. You leave with a plan whether or not we ever work together
+                        again.
                     </p>
                     <p class="package-note">What you pay for it credits 100% toward the Playbook Build if you continue within 60 days.</p>
                 </div>
@@ -201,7 +309,7 @@
                     <h3>AI Advisor Retainer</h3>
                     <p class="package-shape">Monthly, month to month</p>
                     <p>
-                        The landscape moves monthly; your practice shouldn't have to track it.
+                        The tools change monthly; you shouldn't have to track them.
                         Two working sessions a month, straight answers inside two business days, and
                         a plain verdict on any tool someone pitches you. "Skip it" is a complete
                         answer, and the one you'll hear most. Cancel anytime — an email is enough.
@@ -209,19 +317,18 @@
                 </div>
             </div>
             <p class="packages-fit">
-                <strong>Who this is built for:</strong> a successful solo professional, or a small
-                practice you built yourself — law, finance, accounting, consulting, insurance, design,
-                an agency, a firm with your name on the door. The field matters less than the shape:
-                you are the owner, the expert, and the person who decides, and your clients pay for
-                your judgment. You're busy, you're good at what you do, and you'd rather pay once for
-                a clear answer than spend six months experimenting. If that's you, the fees are a
-                rounding error against what your time is worth, and I'll say so plainly on the call.
+                <strong>Who this is built for:</strong> an established business where you are the
+                owner, the expert, and the person who decides — and where clients pay for your
+                judgment rather than your headcount. The field matters less than the shape. You're
+                busy, you're good at what you do, and you'd rather pay once for a clear answer than
+                spend six months experimenting. If that's you, the fees are a rounding error against
+                what your time is worth, and I'll say so plainly on the call.
             </p>
             <div class="engagement-arc">
                 <h3>What an engagement actually looks like:</h3>
                 <ol class="arc-steps">
                     <li><strong>Interview.</strong> We spend a morning on how you work — your voice, your judgment calls, the work only you can do.</li>
-                    <li><strong>Encode.</strong> I turn that into working assets: instructions that make the AI sound like you, and tools tuned to your practice.</li>
+                    <li><strong>Encode.</strong> I turn that into working assets: instructions that make the AI sound like you, and tools tuned to your business.</li>
                     <li><strong>Install.</strong> Everything goes onto your own subscription, on your own machine.</li>
                     <li><strong>Train.</strong> Hands-on, until you run it without thinking about it.</li>
                     <li><strong>Hand off.</strong> You're independent. I'm a phone call away — by choice, not by dependency.</li>
@@ -320,10 +427,11 @@
     <section id="speaking" class="speaking">
         <div class="container">
             <p class="eyebrow">Speaking</p>
-            <h2>AI for the Solo Practice: Threat, Tool, or Both?</h2>
+            <h2>AI for the Independent Professional: Threat, Tool, or Both?</h2>
             <p>
-                One talk, built for the rooms where solo professionals gather — bar sections,
-                FPA and NAPFA chapters, CPA societies, and business groups. I'm not a professional
+                One talk, built for the rooms where independent professionals and firm owners
+                gather — bar sections, financial-planning chapters, CPA societies, consultant and
+                creative-industry groups, and business-owner peer groups. I'm not a professional
                 speaker; I'm a practitioner who shares what I'm learning.
             </p>
             <p class="speaking-prior">Previous speaking: IBM SHARE, industry conferences, corporate events, and a long-running webinar series.</p>
@@ -342,6 +450,14 @@
                     There are configurations, business-grade agreements, and when necessary fully
                     private setups where nothing leaves your control. Sorting this out for your
                     specific obligations is the first thing we do.
+                </dd>
+                <dt>Is this AI training? Will you teach me ChatGPT?</dt>
+                <dd>
+                    Training is part of every engagement, and it comes last. Anyone can show you
+                    what the tools do. The work is figuring out where they belong in <em>your</em>
+                    week, setting them up so confidential material stays where it should, and
+                    writing down enough of your judgment that the results sound like you. Then,
+                    yes — I train you on it, hands-on, until you run it without me.
                 </dd>
                 <dt>I'm not technical. Is this going to be over my head?</dt>
                 <dd>
@@ -369,13 +485,13 @@
                 <dd>
                     Usually one professional-grade AI subscription — roughly the cost of a nice
                     dinner each month — that <em>you</em> own, on your own laptop. I'll tell you
-                    exactly which one and why, configure it for your practice and your
+                    exactly which one and why, configure it for your business and your
                     confidentiality obligations, and teach you to run it. No server room, no IT
                     contract, no equipment.
                 </dd>
                 <dt>Why aren't your prices on the site?</dt>
                 <dd>
-                    Because the right number depends on your practice, and I'd rather quote you
+                    Because the right number depends on your business, and I'd rather quote you
                     honestly than post a range you have to guess yourself into. What I will commit
                     to publicly: every engagement is a <strong>fixed fee, agreed in writing before
                     work starts</strong>. I don't bill hourly, I don't run a meter, and you'll know
@@ -395,6 +511,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact</h2>
+            <p class="contact-lead">Twenty minutes, no pitch. We talk about your business and where AI might fit — and where it shouldn't.</p>
             <div class="contact-cta">
                 <a href="https://calendly.com/mark-marklevy/30min" class="btn btn-primary">Book a free 20-minute conversation</a>
             </div>
@@ -405,9 +522,11 @@
 
             <div class="newsletter">
                 <h3>Stay in touch</h3>
-                <p>I write for solo professionals figuring out AI. Weekly, plain language, no hype.</p>
+                <!-- No cadence promise until the newsletter actually ships (Mark, 2026-09-01).
+                     The Buttondown account is live and capturing; "Weekly" was the overclaim. -->
+                <p>I write for independent professionals figuring out AI. When there's something worth your inbox, you'll get it — plain language, no hype.</p>
                 <form id="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/marklevy" method="post" target="_blank">
-                    <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+                    <input type="email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required>
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
                 <p class="form-disclaimer">No spam. Unsubscribe anytime.</p>
@@ -416,11 +535,19 @@
     </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer — keep in lockstep with who-i-help/, how-i-help/, about/, _templates/page.html -->
     <footer class="footer">
         <div class="container">
             <p class="footer-logo">Mark Levy</p>
             <p class="footer-persona">Builder · Explainer · System Thinker</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/who-i-help/">Who I Help</a> ·
+                <a href="/how-i-help/">How I Help</a> ·
+                <a href="/about/">About</a> ·
+                <a href="/#writing">Writing</a> ·
+                <a href="/#speaking">Speaking</a> ·
+                <a href="/#contact">Contact</a>
+            </nav>
             <p class="footer-links">
                 <!--email_off--><a href="mailto:mark@marklevy.ai">mark@marklevy.ai</a><!--/email_off--> ·
                 <a href="https://www.linkedin.com/in/markolevy/" target="_blank" rel="noopener">LinkedIn</a>

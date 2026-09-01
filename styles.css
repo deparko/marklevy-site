@@ -566,7 +566,7 @@ a.article-card:hover { border-color: var(--accent); }
     /* keep hero + CTA above the fold */
     .hero { padding-top: 2.25rem; }
     .hero-title { margin-bottom: 1rem; }
-    .hero-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .hero-subtitle { font-size: 1.125rem; margin-bottom: 1.4rem; } /* 18px floor — reader is 45–65 */
 
     .btn { display: block; text-align: center; }
     .hero-cta .btn, .contact-cta .btn, .page-cta .btn { width: 100%; }
@@ -577,4 +577,144 @@ a.article-card:hover { border-color: var(--accent); }
     .articles-grid { grid-template-columns: 1fr; }
 
     h2 { font-size: 1.65rem; }
+}
+
+/* ==========================================================================
+   Added 2026-09-01 — multi-page architecture (who-i-help / how-i-help / about),
+   accessibility helpers, homepage "What I help with" + "Who I work with" blocks.
+   ========================================================================== */
+
+/* Accessibility ------------------------------------------------------------- */
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0.5rem;
+    z-index: 100;
+    font-family: var(--display);
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+}
+.skip-link:focus { left: 0.5rem; }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.nav-links a[aria-current="page"] { color: var(--ink); }
+
+.headshot { height: auto; }
+
+/* Homepage: What I help with ------------------------------------------------- */
+
+.areas h2, .who h2 { max-width: 24ch; }
+
+.areas-intro {
+    max-width: 36em;
+    margin-bottom: 1.75rem;
+}
+
+.areas-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem 0;
+    max-width: 38em;
+}
+
+.areas-list li {
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--hairline);
+    font-size: 1.05rem;
+}
+
+.areas-list strong { font-family: var(--display); font-weight: 700; }
+
+.section-link {
+    margin-top: 1.75rem;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1rem;
+}
+.section-link a { color: var(--accent-text); text-decoration: none; }
+.section-link a:hover { text-decoration: underline; }
+
+/* Homepage: Who I work with ------------------------------------------------- */
+
+.who p:not(.eyebrow):not(.section-link) { max-width: 36em; }
+
+.contact-lead { max-width: 34em; margin-bottom: 0.5rem; }
+
+/* Footer nav ------------------------------------------------------------------ */
+
+.footer-nav {
+    margin-top: 1rem;
+    font-family: var(--display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+.footer-nav a { color: var(--muted); text-decoration: none; }
+.footer-nav a:hover { color: var(--accent); }
+
+/* Inner pages ------------------------------------------------------------------ */
+
+.page .eyebrow { margin-bottom: 0.9rem; }
+
+.page-lead {
+    font-size: 1.25rem;
+    max-width: 34em;
+    margin-bottom: 0.5rem;
+}
+
+.page h2 {
+    font-size: 1.55rem;
+    max-width: 26ch;
+    margin-top: 3rem;
+    margin-bottom: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--hairline);
+}
+
+.page p + p { margin-top: 1.1em; }
+
+.page ul {
+    max-width: 38em;
+    padding-left: 1.2rem;
+}
+.page li + li { margin-top: 0.6em; }
+.page li strong { font-family: var(--display); font-weight: 700; }
+
+.page-cta a:not(.btn) {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--accent-text);
+    text-decoration: none;
+}
+.page-cta a:not(.btn):hover { text-decoration: underline; }
+
+.about-grid-page { margin-bottom: 1rem; }
+.about-grid-page .about-text h1 { margin-bottom: 0.75rem; }
+
+@media (max-width: 700px) {
+    .page h2 { margin-top: 2.25rem; padding-top: 1.5rem; }
+    .about-grid-page { grid-template-columns: 1fr; }
+}
+
+/* who-i-help: one named routine per profession (added 2026-09-01) */
+.routine {
+    margin-top: 1.1em;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--accent-text);
+    font-size: 1rem;
 }
