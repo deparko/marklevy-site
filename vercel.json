@@ -2,11 +2,6 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/call",
-      "destination": "https://calendly.com/mark-marklevy/30min",
-      "permanent": true
-    },
-    {
       "source": "/call/",
       "destination": "https://calendly.com/mark-marklevy/30min",
       "permanent": true
