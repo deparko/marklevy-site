@@ -722,6 +722,14 @@ a.article-card:hover { border-color: var(--accent); }
 .flow-head-accent { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--accent-text); }
 .flow-sub { font-family: var(--body); font-size: 14px; fill: var(--muted); }
 .flow-label { font-family: var(--body); font-size: 14px; fill: var(--muted); }
+/* Ledger figure (first used 2026-09-07, /insights/shortcuts-that-bill-you-later/) — a bill: shortcut → cost */
+.ledger-rule { stroke: var(--ink); stroke-width: 3; }
+.ledger-hair { stroke: var(--hairline); stroke-width: 2; }
+.ledger-head { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: 0.12em; fill: var(--muted); }
+.ledger-cell { font-family: var(--body); font-size: 31px; fill: var(--ink); }
+.ledger-footer { font-family: var(--display); font-weight: 700; font-size: 40px; fill: var(--accent-text); }
+.ledger-arrow { fill: none; stroke: var(--accent-text); stroke-width: 3; }
+.ledger-arrowhead { fill: var(--accent-text); }
 
 .page li strong { font-family: var(--display); font-weight: 700; }
 
