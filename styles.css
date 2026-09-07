@@ -693,6 +693,36 @@ a.article-card:hover { border-color: var(--accent); }
     padding-left: 1.2rem;
 }
 .page li + li { margin-top: 0.6em; }
+.page blockquote {
+    max-width: 38em;
+    margin: 1.4em 0;
+    padding: 0.2em 0 0.2em 1.2rem;
+    border-left: 3px solid var(--accent, #B0542F);
+}
+.page blockquote p { font-style: italic; }
+
+/* Article figures (first used 2026-09-06, /insights/ data-flow diagram) */
+.page figure { margin: 1.8em 0 2em; max-width: 38em; }
+.page .figure-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.7em;
+}
+.page figure svg { display: block; width: 100%; max-width: 38em; height: auto; margin: 0; }
+.page figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--muted); margin-top: 0.9em; }
+.flow-box { fill: var(--paper-raised); stroke: var(--hairline); stroke-width: 1; }
+.flow-box-dashed { fill: var(--paper); stroke: var(--accent); stroke-width: 1.25; stroke-dasharray: 5 4; }
+.flow-line { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.flow-line-dashed { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.flow-arrow-ink { fill: var(--ink); }
+.flow-arrow-accent { fill: var(--accent); }
+.flow-head { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+.flow-head-accent { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--accent-text); }
+.flow-sub { font-family: var(--body); font-size: 14px; fill: var(--muted); }
+.flow-label { font-family: var(--body); font-size: 14px; fill: var(--muted); }
+
 .page li strong { font-family: var(--display); font-weight: 700; }
 
 .page-cta a:not(.btn) {
