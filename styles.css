@@ -837,7 +837,7 @@ a.article-card:hover { border-color: var(--accent); }
 }
 
 /* Phones: the map turns vertical so the labels stay readable */
-.map-vertical { display: none; }
+.home-figure .map-vertical { display: none; }
 .map-v-step { font-size: 20px; }
 .map-v-head { font-size: 13px; }
 .map-v-label { font-size: 17px; }
