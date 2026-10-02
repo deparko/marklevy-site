@@ -131,7 +131,7 @@ section p + p { margin-top: 1.1em; }
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.6rem 1.5rem;
@@ -142,7 +142,15 @@ section p + p { margin-top: 1.1em; }
     font-size: 1.15rem;
     font-weight: 800;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
 }
+.nav-logo:hover { color: var(--accent-text); }
+
+/* Channel mark (same as the YouTube / X @deskofone avatar), terracotta bar, M in the text color. */
+.nav-mark { height: 1.6em; width: auto; flex: none; }
+.nav-mark-bar { fill: var(--accent); }
 
 .nav-links {
     display: flex;
