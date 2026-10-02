@@ -131,7 +131,7 @@ section p + p { margin-top: 1.1em; }
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.6rem 1.5rem;
@@ -142,7 +142,15 @@ section p + p { margin-top: 1.1em; }
     font-size: 1.15rem;
     font-weight: 800;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
 }
+.nav-logo:hover { color: var(--accent-text); }
+
+/* Channel mark (same as the YouTube / X @deskofone avatar), terracotta bar, M in the text color. */
+.nav-mark { height: 1.6em; width: auto; flex: none; }
+.nav-mark-bar { fill: var(--accent); }
 
 .nav-links {
     display: flex;
@@ -756,3 +764,104 @@ a.article-card:hover { border-color: var(--accent); }
     border-left: 2px solid var(--accent-text);
     font-size: 1rem;
 }
+
+/* ==========================================================================
+   Homepage diagrams (added 2026-10-02) — same drawing language as the ledger
+   figure: hairlines, ink, one accent for the thing that matters.
+   ========================================================================== */
+
+.home-figure { margin: 2rem 0 2.25rem; max-width: 38em; }
+.home-figure svg { display: block; width: 100%; height: auto; }
+.home-figure .figure-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 0 0.9em;
+}
+.home-figure figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--muted); margin-top: 0.9em; }
+
+/* Hero: text + "core vs. context" figure side by side when there is room.
+   The hero keeps the nav's measure so the page edges line up. The text block becomes
+   display: contents, so eyebrow / title / subtitle / CTA are grid rows and the figure is
+   pinned to the title's top edge and the subtitle's bottom — a headline with its
+   illustration, not two objects floating against each other. */
+.hero-figure { max-width: 26rem; margin: 3rem 0 0; }
+.hero-figure svg { display: block; width: 100%; height: auto; }
+@media (min-width: 1100px) {
+    .hero .container {
+        max-width: var(--measure-wide);
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        column-gap: 3.5rem;
+        align-items: start;
+    }
+    .hero-text { display: contents; }
+    .hero-text > * { grid-column: 1; }
+    .hero-figure { grid-column: 2; grid-row: 2 / span 2; align-self: start; margin: 0; max-width: none; }
+    /* Largest size that keeps the title's four-line break in the narrower column
+       (sentence break = line break, the accent sentence starts a line). */
+    .hero-title { font-size: 2.7rem; }
+}
+
+.core-ring { fill: none; stroke: var(--hairline); stroke-width: 2; stroke-dasharray: 6 7; }
+.core-disc { fill: var(--accent); }
+.core-kicker { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.16em; fill: var(--paper); }
+.core-word { font-family: var(--display); font-weight: 700; font-size: 36px; fill: var(--paper); }
+.ctx-knockout { fill: var(--paper); } /* breaks the ring behind each label */
+.ctx-label { font-family: var(--display); font-weight: 600; font-size: 30px; fill: var(--ink); }
+.ctx-spoke { fill: none; stroke: var(--accent-text); stroke-width: 2.5; }
+.ctx-arrowhead { fill: var(--accent-text); }
+
+/* "Yes → paid" map */
+.map-work { stroke: var(--ink); stroke-width: 3; }
+.map-wait { stroke: var(--accent); stroke-width: 6; stroke-dasharray: 10 8; }
+.map-node { fill: var(--ink); }
+.map-node-end { fill: var(--accent); }
+.map-step { font-family: var(--display); font-weight: 700; font-size: 26px; fill: var(--ink); }
+.map-wait-head { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.16em; fill: var(--accent-text); }
+.map-wait-label { font-family: var(--body); font-size: 23px; fill: var(--accent-text); }
+
+/* Engagement arc as a timeline on wide screens */
+@media (min-width: 900px) {
+    .engagement-arc { max-width: none; }
+    .arc-steps {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 1.75rem;
+    }
+    .arc-steps li,
+    .arc-steps li:last-child { border: none; padding: 3.5rem 0 0; font-size: 1rem; }
+    .arc-steps li::before {
+        top: 0;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 1.05rem;
+        line-height: 2.4rem;
+        text-align: center;
+    }
+    .arc-steps li::after {
+        content: "";
+        position: absolute;
+        top: 1.2rem;
+        left: 3rem;
+        right: -1.15rem;
+        border-top: 2px solid var(--hairline);
+    }
+    .arc-steps li:last-child::after { display: none; }
+    .arc-steps strong { display: block; font-family: var(--display); font-size: 1.15rem; margin-bottom: 0.35rem; }
+}
+
+/* Phones: the map turns vertical so the labels stay readable */
+.home-figure .map-vertical { display: none; }
+.map-v-step { font-size: 20px; }
+.map-v-head { font-size: 13px; }
+.map-v-label { font-size: 17px; }
+@media (max-width: 600px) {
+    .home-figure .map-horizontal { display: none; }
+    .home-figure .map-vertical { display: block; max-width: 22rem; }
+}
+
+.insights-grid { margin-top: 2.25rem; }
