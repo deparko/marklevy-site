@@ -776,19 +776,20 @@ a.article-card:hover { border-color: var(--accent); }
 .hero-figure { max-width: 26rem; margin: 3rem 0 0; }
 @media (min-width: 1100px) {
     .hero .container {
-        max-width: var(--measure-wide);
+        max-width: 76rem;
         display: grid;
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-        column-gap: 3.5rem;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        column-gap: 4rem;
         align-items: center;
     }
+    /* Wider hero + a larger figure so it holds its own against the text column (2026-10-02). */
     .hero-figure { margin: 0; max-width: none; }
 }
 
 .core-ring { fill: none; stroke: var(--hairline); stroke-width: 2; stroke-dasharray: 6 7; }
 .core-disc { fill: var(--accent); }
 .core-kicker { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: 0.16em; fill: var(--paper); }
-.core-word { font-family: var(--display); font-weight: 800; font-size: 42px; fill: #ffffff; }
+.core-word { font-family: var(--display); font-weight: 700; font-size: 35px; fill: #ffffff; }
 .ctx-pill { fill: var(--paper-raised); stroke: var(--hairline); stroke-width: 2; }
 .ctx-label { font-family: var(--display); font-weight: 600; font-size: 24px; fill: var(--ink); }
 .ctx-spoke { fill: none; stroke: var(--accent-text); stroke-width: 2.5; }
