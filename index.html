@@ -160,28 +160,37 @@
             </div>
             </div>
             <!-- Core vs. context figure (2026-10-02). The positioning in one picture: routines run in the
-                 ring, every arrow ends at the owner's judgment. Labels mirror the subtitle; keep them in step. -->
+                 ring, every arrow ends at the owner's judgment. Labels mirror the subtitle; keep them in step.
+                 Labels sit on the ring with a paper-colored knockout behind each one (no boxes: the ledger
+                 figure's language is hairlines, type and one accent). Geometry is generated from measured
+                 label widths; the viewBox is cropped to the drawing, center at (360,320). -->
             <figure class="hero-figure">
-                <svg viewBox="0 0 720 640" role="img" aria-labelledby="core-title core-desc" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="52 56 616 528" role="img" aria-labelledby="core-title core-desc" xmlns="http://www.w3.org/2000/svg">
                     <title id="core-title">The core and the context</title>
                     <desc id="core-desc">A solid circle in the center labeled the core: your judgment. Around it, a dashed ring of six kinds of context work: research, follow-up, documents, meeting preparation, your files, and first drafts. An arrow runs from each one inward to the core, because every routine stops for your approval.</desc>
-                    <circle class="core-ring" cx="360" cy="320" r="235"/>
-                    <path class="ctx-spoke" d="M 360.0 117.0 L 360.0 176.0"/><polygon class="ctx-arrowhead" points="360.0,189.0 353.0,175.0 367.0,175.0"/>
-                    <path class="ctx-spoke" d="M 513.3 231.5 L 484.7 248.0"/><polygon class="ctx-arrowhead" points="473.4,254.5 482.1,241.4 489.1,253.6"/>
-                    <path class="ctx-spoke" d="M 513.3 408.5 L 484.7 392.0"/><polygon class="ctx-arrowhead" points="473.4,385.5 489.1,386.4 482.1,398.6"/>
-                    <path class="ctx-spoke" d="M 360.0 523.0 L 360.0 464.0"/><polygon class="ctx-arrowhead" points="360.0,451.0 367.0,465.0 353.0,465.0"/>
-                    <path class="ctx-spoke" d="M 206.7 408.5 L 235.3 392.0"/><polygon class="ctx-arrowhead" points="246.6,385.5 237.9,398.6 230.9,386.4"/>
-                    <path class="ctx-spoke" d="M 206.7 231.5 L 235.3 248.0"/><polygon class="ctx-arrowhead" points="246.6,254.5 230.9,253.6 237.9,241.4"/>
-                    <rect class="ctx-pill" x="262.0" y="58.0" width="196" height="54" rx="27"/><text class="ctx-label" x="360.0" y="93.5" text-anchor="middle">Research</text>
-                    <rect class="ctx-pill" x="465.5" y="175.5" width="196" height="54" rx="27"/><text class="ctx-label" x="563.5" y="211.0" text-anchor="middle">Follow-up</text>
-                    <rect class="ctx-pill" x="465.5" y="410.5" width="196" height="54" rx="27"/><text class="ctx-label" x="563.5" y="446.0" text-anchor="middle">Documents</text>
-                    <rect class="ctx-pill" x="262.0" y="528.0" width="196" height="54" rx="27"/><text class="ctx-label" x="360.0" y="563.5" text-anchor="middle">Meeting prep</text>
-                    <rect class="ctx-pill" x="58.5" y="410.5" width="196" height="54" rx="27"/><text class="ctx-label" x="156.5" y="446.0" text-anchor="middle">Your files</text>
-                    <rect class="ctx-pill" x="58.5" y="175.5" width="196" height="54" rx="27"/><text class="ctx-label" x="156.5" y="211.0" text-anchor="middle">First drafts</text>
-                    <circle class="core-disc" cx="360" cy="320" r="128"/>
-                    <text class="core-kicker" x="360" y="290" text-anchor="middle">THE CORE</text>
-                    <text class="core-word" x="360" y="331" text-anchor="middle">Your</text>
-                    <text class="core-word" x="360" y="370" text-anchor="middle">judgment</text>
+                    <circle class="core-ring" cx="360" cy="320" r="230"/>
+                    <rect class="ctx-knockout" x="279.9" y="71.0" width="160.2" height="38"/>
+                    <path class="ctx-spoke" d="M 360.0 117.0 L 360.0 186.0"/><polygon class="ctx-arrowhead" points="360.0,200.0 367.0,186.0 353.0,186.0"/>
+                    <text class="ctx-label" x="360.0" y="90.0" text-anchor="middle" dominant-baseline="central">Research</text>
+                    <rect class="ctx-knockout" x="485.7" y="181.0" width="164.2" height="38"/>
+                    <path class="ctx-spoke" d="M 528.0 223.0 L 476.0 253.0"/><polygon class="ctx-arrowhead" points="463.9,260.0 479.5,259.1 472.5,246.9"/>
+                    <text class="ctx-label" x="567.8" y="200.0" text-anchor="middle" dominant-baseline="central">Follow-up</text>
+                    <rect class="ctx-knockout" x="474.2" y="421.0" width="187.4" height="38"/>
+                    <path class="ctx-spoke" d="M 528.0 417.0 L 476.0 387.0"/><polygon class="ctx-arrowhead" points="463.9,380.0 472.5,393.1 479.5,380.9"/>
+                    <text class="ctx-label" x="567.8" y="440.0" text-anchor="middle" dominant-baseline="central">Documents</text>
+                    <rect class="ctx-knockout" x="256.0" y="531.0" width="208.0" height="38"/>
+                    <path class="ctx-spoke" d="M 360.0 523.0 L 360.0 454.0"/><polygon class="ctx-arrowhead" points="360.0,440.0 353.0,454.0 367.0,454.0"/>
+                    <text class="ctx-label" x="360.0" y="550.0" text-anchor="middle" dominant-baseline="central">Meeting prep</text>
+                    <rect class="ctx-knockout" x="75.0" y="421.0" width="154.3" height="38"/>
+                    <path class="ctx-spoke" d="M 192.0 417.0 L 244.0 387.0"/><polygon class="ctx-arrowhead" points="256.1,380.0 240.5,380.9 247.5,393.1"/>
+                    <text class="ctx-label" x="152.2" y="440.0" text-anchor="middle" dominant-baseline="central">Your files</text>
+                    <rect class="ctx-knockout" x="64.1" y="181.0" width="176.1" height="38"/>
+                    <path class="ctx-spoke" d="M 192.0 223.0 L 244.0 253.0"/><polygon class="ctx-arrowhead" points="256.1,260.0 247.5,246.9 240.5,259.1"/>
+                    <text class="ctx-label" x="152.2" y="200.0" text-anchor="middle" dominant-baseline="central">First drafts</text>
+                    <circle class="core-disc" cx="360" cy="320" r="110"/>
+                    <text class="core-kicker" x="360" y="287" text-anchor="middle">THE CORE</text>
+                    <text class="core-word" x="360" y="326" text-anchor="middle">Your</text>
+                    <text class="core-word" x="360" y="364" text-anchor="middle">Judgment</text>
                 </svg>
             </figure>
         </div>

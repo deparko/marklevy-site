@@ -772,26 +772,35 @@ a.article-card:hover { border-color: var(--accent); }
 }
 .home-figure figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--muted); margin-top: 0.9em; }
 
-/* Hero: text + "core vs. context" figure side by side when there is room */
+/* Hero: text + "core vs. context" figure side by side when there is room.
+   The hero keeps the nav's measure so the page edges line up. The text block becomes
+   display: contents, so eyebrow / title / subtitle / CTA are grid rows and the figure is
+   pinned to the title's top edge and the subtitle's bottom — a headline with its
+   illustration, not two objects floating against each other. */
 .hero-figure { max-width: 26rem; margin: 3rem 0 0; }
+.hero-figure svg { display: block; width: 100%; height: auto; }
 @media (min-width: 1100px) {
     .hero .container {
-        max-width: 76rem;
+        max-width: var(--measure-wide);
         display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-        column-gap: 4rem;
-        align-items: center;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        column-gap: 3.5rem;
+        align-items: start;
     }
-    /* Wider hero + a larger figure so it holds its own against the text column (2026-10-02). */
-    .hero-figure { margin: 0; max-width: none; }
+    .hero-text { display: contents; }
+    .hero-text > * { grid-column: 1; }
+    .hero-figure { grid-column: 2; grid-row: 2 / span 2; align-self: start; margin: 0; max-width: none; }
+    /* Largest size that keeps the title's four-line break in the narrower column
+       (sentence break = line break, the accent sentence starts a line). */
+    .hero-title { font-size: 2.7rem; }
 }
 
 .core-ring { fill: none; stroke: var(--hairline); stroke-width: 2; stroke-dasharray: 6 7; }
 .core-disc { fill: var(--accent); }
-.core-kicker { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: 0.16em; fill: var(--paper); }
-.core-word { font-family: var(--display); font-weight: 700; font-size: 35px; fill: #ffffff; }
-.ctx-pill { fill: var(--paper-raised); stroke: var(--hairline); stroke-width: 2; }
-.ctx-label { font-family: var(--display); font-weight: 600; font-size: 24px; fill: var(--ink); }
+.core-kicker { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.16em; fill: var(--paper); }
+.core-word { font-family: var(--display); font-weight: 700; font-size: 36px; fill: var(--paper); }
+.ctx-knockout { fill: var(--paper); } /* breaks the ring behind each label */
+.ctx-label { font-family: var(--display); font-weight: 600; font-size: 30px; fill: var(--ink); }
 .ctx-spoke { fill: none; stroke: var(--accent-text); stroke-width: 2.5; }
 .ctx-arrowhead { fill: var(--accent-text); }
 
