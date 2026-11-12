@@ -1,20 +1,31 @@
 /* ==========================================================================
-   marklevy.ai — Warm Paper
-   Palette carried from the One-Person Enterprise LinkedIn carousels.
-   Register: well-set book page — calm, editorial, premium.
+   marklevy.ai — Pacific Ink (light theme)
+   Surface ground, ink text, teal accent, amber only on the booking button.
+   Light-only.
    ========================================================================== */
 
 :root {
-    --paper: #F3EDE3;
-    --ink: #211C16;
-    --accent: #B0542F;
-    --accent-text: #9C4322; /* accent deepened to pass 4.5:1 AA for small text on paper */
-    --muted: #6B6256;
-    --hairline: #D8CDBC;
-    --paper-raised: #F8F4EC;
+    --surface: #F6F8F8;
+    --surface-raised: #FFFFFF;
+    --tint: #E3EFEE;
+    --deep: #0F2233;
+    --ink: #0F2233;
+    --ink-soft: #4B5B68;
+    --slate: #5B6B78;
+    --teal: #0E6E72;
+    --amber: #E0A040;
+    --amber-hover: #CC8E30;   /* button hover only; ink text still passes */
+    --on-deep: #E8EEF0;
+    --on-deep-soft: #C7D3DA;
+    --line: #C9D9DA;
 
-    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    /* Background of the band an element sits on — SVG knockouts fill with it. */
+    --band: var(--surface);
+    --focus: var(--teal);
+
+    --display: "Plus Jakarta Sans", Arial, sans-serif;
+    --body: Inter, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "Courier New", monospace;
 
     --measure: 46rem;      /* comfortable book measure at 19px */
     --measure-wide: 66rem; /* package grid */
@@ -33,24 +44,28 @@ html {
 
 body {
     font-family: var(--body);
-    font-size: 19px;               /* reader is 45–62; never below 18px */
-    line-height: 1.65;
+    font-size: 18px;               /* reader is 45–62; never below 18px (Inter's x-height reads larger than the old serif) */
+    line-height: 1.6;
     color: var(--ink);
-    background-color: var(--paper);
+    background-color: var(--surface);
 }
 
-::selection { background: var(--accent); color: var(--paper); }
+strong, b { font-weight: 600; }
+
+::selection { background: var(--teal); color: #FFFFFF; }
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--ink); text-decoration-color: var(--hairline); text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--accent); }
+/* Links teal, hover ink. No :visited rule — visited links stay teal by inheritance,
+   and a :visited selector would outrank the button and card colors. */
+a { color: var(--teal); text-decoration-color: currentColor; text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
 }
 
 /* Layout ------------------------------------------------------------------ */
@@ -63,7 +78,13 @@ input:focus-visible {
 
 section, .hero {
     padding: 4.5rem 0;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
+}
+
+/* Alternate homepage bands: every second section sits on tint. */
+main > section:nth-of-type(even) {
+    --band: var(--tint);
+    background-color: var(--tint);
 }
 
 .hero { border-top: none; }
@@ -72,8 +93,10 @@ section, .hero {
 
 h1, h2, h3 {
     font-family: var(--display);
+    font-weight: 800;
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 h2 {
@@ -85,12 +108,13 @@ h2 {
 section p + p { margin-top: 1.1em; }
 
 .eyebrow {
-    font-family: var(--display);
+    font-family: var(--mono);
     font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--teal);
+    text-wrap: balance;    /* mono runs wide; keeps "expert-led" from splitting at the hyphen */
     margin-bottom: 1.25rem;
 }
 
@@ -98,31 +122,33 @@ section p + p { margin-top: 1.1em; }
 
 .btn {
     display: inline-block;
-    font-family: var(--display);
+    font-family: var(--body);
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     padding: 0.9rem 1.6rem;
     border-radius: 4px;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--ink);
 }
 
+/* Primary = the booking button: the one amber element, ink text. */
 .btn-primary {
-    background-color: var(--accent);
-    color: #ffffff;
+    background-color: var(--amber);
+    border-color: var(--amber);
+    color: var(--ink);
 }
-.btn-primary:hover { background-color: #96461f; border-color: #96461f; }
+.btn-primary:hover { background-color: var(--amber-hover); border-color: var(--amber-hover); color: var(--ink); }
 
 .btn-outline {
     background: transparent;
-    color: var(--accent-text);
+    color: var(--ink);
 }
-.btn-outline:hover { background-color: var(--accent); color: #ffffff; }
+.btn-outline:hover { background-color: var(--ink); color: var(--on-deep); }
 
 /* Navigation ---------------------------------------------------------------- */
 
 .nav {
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--line);
     padding: 1.1rem 0;
 }
 
@@ -145,12 +171,13 @@ section p + p { margin-top: 1.1em; }
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
+    color: var(--ink);
 }
-.nav-logo:hover { color: var(--accent-text); }
+.nav-logo:hover { color: var(--teal); }
 
-/* Channel mark (same as the YouTube / X @deskofone avatar), terracotta bar, M in the text color. */
+/* Channel mark (same as the YouTube / X @deskofone avatar), M in the text color. */
 .nav-mark { height: 1.6em; width: auto; flex: none; }
-.nav-mark-bar { fill: var(--accent); }
+.nav-mark-bar { fill: var(--teal); }
 
 .nav-links {
     display: flex;
@@ -159,13 +186,13 @@ section p + p { margin-top: 1.1em; }
 }
 
 .nav-links a {
-    font-family: var(--display);
+    font-family: var(--body);
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    color: var(--muted);
+    color: var(--ink-soft);
 }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: var(--ink); }
 
 /* Hero ----------------------------------------------------------------------- */
 
@@ -178,7 +205,7 @@ section p + p { margin-top: 1.1em; }
     margin-bottom: 1.5rem;
 }
 
-.hero-accent { color: var(--accent); }
+.hero-accent { color: var(--teal); }
 
 .hero-subtitle {
     font-size: 1.25rem;
@@ -188,7 +215,7 @@ section p + p { margin-top: 1.1em; }
 
 .hero-secondary {
     font-size: 1rem;
-    color: var(--muted);
+    color: var(--ink-soft);
     margin-top: 1rem;
 }
 
@@ -215,7 +242,7 @@ section p + p { margin-top: 1.1em; }
 
 .headshot {
     border-radius: 4px;
-    border: 1px solid var(--hairline);
+    border: 1px solid var(--line);
 }
 
 .about-text h2 { max-width: 22ch; }
@@ -243,20 +270,20 @@ section p + p { margin-top: 1.1em; }
     max-width: var(--measure);
     margin-top: 2rem;
     padding-left: 1.1rem;
-    border-left: 2px solid var(--accent-text);
+    border-left: 2px solid var(--teal);
 }
 
 /* Credentials pointer at the end of "Why me" — deliberately quiet: it hands the
    résumé off to LinkedIn rather than putting it on the page. */
 .about-more {
     font-size: 1rem;
-    color: var(--muted);
+    color: var(--ink-soft);
     margin-top: 1.75rem;
 }
 
 .package-card {
-    border: 1px solid var(--hairline);
-    background-color: var(--paper-raised);
+    border: 1px solid var(--line);
+    background-color: var(--surface-raised);
     border-radius: 4px;
     padding: 1.75rem 1.6rem;
     display: flex;
@@ -265,11 +292,12 @@ section p + p { margin-top: 1.1em; }
 
 /* Step eyebrow — sequences the ladder now that prices don't. */
 .package-step {
+    font-family: var(--mono);
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-text);
+    color: var(--teal);
     margin-bottom: 0.6rem;
 }
 
@@ -278,7 +306,7 @@ section p + p { margin-top: 1.1em; }
     font-family: var(--display);
     font-size: 1.55rem;
     font-weight: 800;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
     color: var(--ink);
     margin-bottom: 0.5rem;
@@ -288,8 +316,8 @@ section p + p { margin-top: 1.1em; }
 .package-shape {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--muted);
-    border-bottom: 1px solid var(--hairline);
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
     padding-bottom: 0.9rem;
     margin-bottom: 1.1rem;
     /* Reserve two lines so the rule and body copy line up across all three
@@ -304,7 +332,7 @@ section p + p { margin-top: 1.1em; }
     margin-top: auto;
     padding-top: 1.1rem;
     font-weight: 600;
-    color: var(--accent-text);
+    color: var(--teal);
 }
 
 /* Engagement arc */
@@ -326,19 +354,19 @@ section p + p { margin-top: 1.1em; }
     counter-increment: arc;
     position: relative;
     padding: 0.85rem 0 0.85rem 3.1rem;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
 }
-.arc-steps li:last-child { border-bottom: 1px solid var(--hairline); }
+.arc-steps li:last-child { border-bottom: 1px solid var(--line); }
 
 .arc-steps li::before {
     content: counter(arc);
     position: absolute;
     left: 0;
     top: 0.95rem;
-    font-family: var(--display);
+    font-family: var(--mono);
     font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--accent-text);
+    font-weight: 500;
+    color: var(--teal);
 }
 
 .packages-promise {
@@ -356,12 +384,12 @@ section p + p { margin-top: 1.1em; }
     max-width: 38em;
 }
 
-.proof-list li + li { border-top: 1px solid var(--hairline); }
+.proof-list li + li { border-top: 1px solid var(--line); }
 
 /* Writing ------------------------------------------------------------------------------ */
 
 .writing-intro {
-    color: var(--muted);
+    color: var(--ink-soft);
     margin-bottom: 2rem;
 }
 
@@ -373,30 +401,31 @@ section p + p { margin-top: 1.1em; }
 
 .article-card {
     display: block;
-    border: 1px solid var(--hairline);
-    background-color: var(--paper-raised);
+    border: 1px solid var(--line);
+    background-color: var(--surface-raised);
     border-radius: 4px;
     padding: 1.4rem 1.5rem;
     text-decoration: none;
+    color: var(--ink);
 }
 
-a.article-card:hover { border-color: var(--accent); }
+a.article-card:hover { border-color: var(--teal); color: var(--ink); }
 
 .article-card h3 {
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0.5rem 0 0.6rem;
 }
 
-.article-card p { font-size: 1rem; color: var(--muted); }
+.article-card p { font-size: 1rem; color: var(--ink-soft); }
 
 .article-date {
-    font-family: var(--display);
+    font-family: var(--mono);
     font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-text);
+    color: var(--slate);
 }
 
 .article-placeholder {
@@ -407,9 +436,8 @@ a.article-card:hover { border-color: var(--accent); }
 .archive-line {
     margin-top: 2.25rem;
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--ink-soft);
 }
-.archive-line a { color: var(--muted); }
 
 /* Speaking ------------------------------------------------------------------------------ */
 
@@ -418,7 +446,7 @@ a.article-card:hover { border-color: var(--accent); }
 
 .speaking-prior {
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--ink-soft);
     margin: 1.1em 0 2rem;
 }
 
@@ -427,10 +455,11 @@ a.article-card:hover { border-color: var(--accent); }
 .faq-list dt {
     font-family: var(--display);
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     padding-top: 1.6rem;
     margin-top: 1.6rem;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
 }
 
 .faq-list dt:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
@@ -444,13 +473,12 @@ a.article-card:hover { border-color: var(--accent); }
 
 .contact-cta { margin: 2rem 0 1.25rem; }
 
-.contact-alt { color: var(--muted); }
-.contact-alt a { color: var(--muted); }
+.contact-alt { color: var(--ink-soft); }
 
 .newsletter {
     margin-top: 3.5rem;
     padding-top: 2.5rem;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
 }
 
 .newsletter h3 {
@@ -473,25 +501,31 @@ a.article-card:hover { border-color: var(--accent); }
     font-size: 1rem;
     padding: 0.85rem 1rem;
     color: var(--ink);
-    background-color: var(--paper-raised);
-    border: 1px solid var(--hairline);
+    background-color: var(--surface-raised);
+    border: 1px solid var(--line);
     border-radius: 4px;
 }
 
-.newsletter input[type="email"]::placeholder { color: var(--muted); }
+.newsletter input[type="email"]::placeholder { color: var(--slate); }
 
+/* Subscribe is not booking: ink fill, never amber. */
 .newsletter .btn { cursor: pointer; }
+.newsletter .btn-primary { background-color: var(--ink); border-color: var(--ink); color: var(--on-deep); }
+.newsletter .btn-primary:hover { background-color: var(--teal); border-color: var(--teal); color: #FFFFFF; }
 
 .form-disclaimer {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--ink-soft);
     margin-top: 0.9rem;
 }
 
 /* Footer -------------------------------------------------------------------------------------- */
 
 .footer {
-    border-top: 1px solid var(--hairline);
+    --band: var(--deep);
+    --focus: var(--on-deep);
+    background-color: var(--deep);
+    color: var(--on-deep);
     padding: 3rem 0;
     text-align: center;
 }
@@ -504,16 +538,18 @@ a.article-card:hover { border-color: var(--accent); }
 
 .footer-persona {
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--on-deep-soft);
     margin-top: 0.2rem;
 }
 
 .footer-links { margin-top: 1rem; font-size: 0.95rem; }
-.footer-links a { color: var(--muted); }
+.footer-links { color: var(--on-deep-soft); }
+.footer-links a { color: var(--on-deep-soft); }
+.footer-links a:hover { color: var(--on-deep); }
 
 .footer-copyright {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--on-deep-soft);
     margin-top: 1.5rem;
 }
 
@@ -531,12 +567,12 @@ a.article-card:hover { border-color: var(--accent); }
 }
 
 .page-verified {
-    font-family: var(--display);
+    font-family: var(--mono);
     font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--slate);
     margin-bottom: 1.25rem;
 }
 
@@ -553,11 +589,11 @@ a.article-card:hover { border-color: var(--accent); }
 .page-closer {
     margin-top: 3rem;
     padding-top: 2.5rem;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
 }
 
 .page-not-for {
-    color: var(--muted);
+    color: var(--ink-soft);
 }
 
 /* Mobile ---------------------------------------------------------------------------------------- */
@@ -599,15 +635,17 @@ a.article-card:hover { border-color: var(--accent); }
     left: -999px;
     top: 0.5rem;
     z-index: 100;
-    font-family: var(--display);
-    font-weight: 700;
+    font-family: var(--body);
+    font-weight: 600;
     text-decoration: none;
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--deep);
+    color: var(--on-deep);
     padding: 0.6rem 1rem;
     border-radius: 4px;
 }
 .skip-link:focus { left: 0.5rem; }
+
+.nowrap { white-space: nowrap; }
 
 .visually-hidden {
     position: absolute;
@@ -619,7 +657,7 @@ a.article-card:hover { border-color: var(--accent); }
     white-space: nowrap;
 }
 
-.nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--teal); }
 
 .headshot { height: auto; }
 
@@ -642,19 +680,18 @@ a.article-card:hover { border-color: var(--accent); }
 
 .areas-list li {
     padding-left: 1.1rem;
-    border-left: 2px solid var(--hairline);
+    border-left: 2px solid var(--teal);
     font-size: 1.05rem;
 }
 
-.areas-list strong { font-family: var(--display); font-weight: 700; }
+.areas-list strong { font-weight: 600; }
 
 .section-link {
     margin-top: 1.75rem;
-    font-family: var(--display);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
 }
-.section-link a { color: var(--accent-text); text-decoration: none; }
+.section-link a { color: var(--teal); text-decoration: none; }
 .section-link a:hover { text-decoration: underline; }
 
 /* Homepage: Who I work with ------------------------------------------------- */
@@ -667,13 +704,12 @@ a.article-card:hover { border-color: var(--accent); }
 
 .footer-nav {
     margin-top: 1rem;
-    font-family: var(--display);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--muted);
+    color: var(--on-deep-soft);
 }
-.footer-nav a { color: var(--muted); text-decoration: none; }
-.footer-nav a:hover { color: var(--accent); }
+.footer-nav a { color: var(--on-deep-soft); text-decoration: none; }
+.footer-nav a:hover { color: var(--on-deep); text-decoration: underline; }
 
 /* Inner pages ------------------------------------------------------------------ */
 
@@ -691,7 +727,7 @@ a.article-card:hover { border-color: var(--accent); }
     margin-top: 3rem;
     margin-bottom: 0.9rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--line);
 }
 
 .page p + p { margin-top: 1.1em; }
@@ -704,47 +740,47 @@ a.article-card:hover { border-color: var(--accent); }
 .page blockquote {
     max-width: 38em;
     margin: 1.4em 0;
-    padding: 0.2em 0 0.2em 1.2rem;
-    border-left: 3px solid var(--accent, #B0542F);
+    padding: 1em 1.2rem;
+    background-color: var(--tint);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 4px 4px 0;
 }
-.page blockquote p { font-style: italic; }
 
 /* Article figures (first used 2026-09-06, /insights/ data-flow diagram) */
 .page figure { margin: 1.8em 0 2em; max-width: 38em; }
 .page .figure-title {
     font-family: var(--display);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.95rem;
     letter-spacing: 0.01em;
     margin: 0 0 0.7em;
 }
 .page figure svg { display: block; width: 100%; max-width: 38em; height: auto; margin: 0; }
-.page figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--muted); margin-top: 0.9em; }
-.flow-box { fill: var(--paper-raised); stroke: var(--hairline); stroke-width: 1; }
-.flow-box-dashed { fill: var(--paper); stroke: var(--accent); stroke-width: 1.25; stroke-dasharray: 5 4; }
+.page figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); margin-top: 0.9em; }
+.flow-box { fill: var(--surface-raised); stroke: var(--line); stroke-width: 1; }
+.flow-box-dashed { fill: var(--band); stroke: var(--teal); stroke-width: 1.25; stroke-dasharray: 5 4; }
 .flow-line { fill: none; stroke: var(--ink); stroke-width: 1.5; }
-.flow-line-dashed { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.flow-line-dashed { fill: none; stroke: var(--teal); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .flow-arrow-ink { fill: var(--ink); }
-.flow-arrow-accent { fill: var(--accent); }
-.flow-head { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
-.flow-head-accent { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--accent-text); }
-.flow-sub { font-family: var(--body); font-size: 14px; fill: var(--muted); }
-.flow-label { font-family: var(--body); font-size: 14px; fill: var(--muted); }
+.flow-arrow-accent { fill: var(--teal); }
+.flow-head { font-family: var(--display); font-weight: 800; font-size: 15px; fill: var(--ink); }
+.flow-head-accent { font-family: var(--display); font-weight: 800; font-size: 15px; fill: var(--teal); }
+.flow-sub { font-family: var(--body); font-size: 14px; fill: var(--ink-soft); }
+.flow-label { font-family: var(--body); font-size: 14px; fill: var(--ink-soft); }
 /* Ledger figure (first used 2026-09-07, /insights/shortcuts-that-bill-you-later/) — a bill: shortcut → cost */
 .ledger-rule { stroke: var(--ink); stroke-width: 3; }
-.ledger-hair { stroke: var(--hairline); stroke-width: 2; }
-.ledger-head { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: 0.12em; fill: var(--muted); }
+.ledger-hair { stroke: var(--line); stroke-width: 2; }
+.ledger-head { font-family: var(--mono); font-weight: 500; font-size: 22px; letter-spacing: 0.1em; fill: var(--slate); }
 .ledger-cell { font-family: var(--body); font-size: 31px; fill: var(--ink); }
-.ledger-footer { font-family: var(--display); font-weight: 700; font-size: 40px; fill: var(--accent-text); }
-.ledger-arrow { fill: none; stroke: var(--accent-text); stroke-width: 3; }
-.ledger-arrowhead { fill: var(--accent-text); }
+.ledger-footer { font-family: var(--display); font-weight: 800; font-size: 40px; letter-spacing: -0.02em; fill: var(--teal); }
+.ledger-arrow { fill: none; stroke: var(--teal); stroke-width: 3; }
+.ledger-arrowhead { fill: var(--teal); }
 
-.page li strong { font-family: var(--display); font-weight: 700; }
+.page li strong { font-weight: 600; }
 
 .page-cta a:not(.btn) {
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--accent-text);
+    font-weight: 600;
+    color: var(--teal);
     text-decoration: none;
 }
 .page-cta a:not(.btn):hover { text-decoration: underline; }
@@ -761,7 +797,7 @@ a.article-card:hover { border-color: var(--accent); }
 .routine {
     margin-top: 1.1em;
     padding-left: 1.1rem;
-    border-left: 2px solid var(--accent-text);
+    border-left: 2px solid var(--teal);
     font-size: 1rem;
 }
 
@@ -774,11 +810,11 @@ a.article-card:hover { border-color: var(--accent); }
 .home-figure svg { display: block; width: 100%; height: auto; }
 .home-figure .figure-title {
     font-family: var(--display);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.95rem;
     margin: 0 0 0.9em;
 }
-.home-figure figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--muted); margin-top: 0.9em; }
+.home-figure figcaption { font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); margin-top: 0.9em; }
 
 /* Hero: text + "core vs. context" figure side by side when there is room.
    The hero keeps the nav's measure so the page edges line up. The text block becomes
@@ -803,23 +839,23 @@ a.article-card:hover { border-color: var(--accent); }
     .hero-title { font-size: 2.7rem; }
 }
 
-.core-ring { fill: none; stroke: var(--hairline); stroke-width: 2; stroke-dasharray: 6 7; }
-.core-disc { fill: var(--accent); }
-.core-kicker { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.16em; fill: var(--paper); }
-.core-word { font-family: var(--display); font-weight: 700; font-size: 36px; fill: var(--paper); }
-.ctx-knockout { fill: var(--paper); } /* breaks the ring behind each label */
-.ctx-label { font-family: var(--display); font-weight: 600; font-size: 30px; fill: var(--ink); }
-.ctx-spoke { fill: none; stroke: var(--accent-text); stroke-width: 2.5; }
-.ctx-arrowhead { fill: var(--accent-text); }
+.core-ring { fill: none; stroke: var(--teal); stroke-width: 2; stroke-dasharray: 6 7; }
+.core-disc { fill: var(--deep); }
+.core-kicker { font-family: var(--mono); font-weight: 500; font-size: 20px; letter-spacing: 0.1em; fill: var(--on-deep); }
+.core-word { font-family: var(--display); font-weight: 800; font-size: 36px; letter-spacing: -0.02em; fill: var(--on-deep); }
+.ctx-knockout { fill: var(--band); } /* breaks the ring behind each label */
+.ctx-label { font-family: var(--display); font-weight: 700; font-size: 30px; fill: var(--ink); }
+.ctx-spoke { fill: none; stroke: var(--teal); stroke-width: 2.5; }
+.ctx-arrowhead { fill: var(--teal); }
 
 /* "Yes → paid" map */
 .map-work { stroke: var(--ink); stroke-width: 3; }
-.map-wait { stroke: var(--accent); stroke-width: 6; stroke-dasharray: 10 8; }
+.map-wait { stroke: var(--teal); stroke-width: 6; stroke-dasharray: 10 8; }
 .map-node { fill: var(--ink); }
-.map-node-end { fill: var(--accent); }
-.map-step { font-family: var(--display); font-weight: 700; font-size: 26px; fill: var(--ink); }
-.map-wait-head { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.16em; fill: var(--accent-text); }
-.map-wait-label { font-family: var(--body); font-size: 23px; fill: var(--accent-text); }
+.map-node-end { fill: var(--teal); }
+.map-step { font-family: var(--display); font-weight: 800; font-size: 26px; fill: var(--ink); }
+.map-wait-head { font-family: var(--mono); font-weight: 500; font-size: 18px; letter-spacing: 0.1em; fill: var(--ink); }
+.map-wait-label { font-family: var(--body); font-size: 23px; fill: var(--ink); }
 
 /* Engagement arc as a timeline on wide screens */
 @media (min-width: 900px) {
@@ -836,8 +872,8 @@ a.article-card:hover { border-color: var(--accent); }
         width: 2.4rem;
         height: 2.4rem;
         border-radius: 50%;
-        background: var(--accent);
-        color: #ffffff;
+        background: var(--teal);
+        color: #FFFFFF;
         font-size: 1.05rem;
         line-height: 2.4rem;
         text-align: center;
@@ -848,10 +884,10 @@ a.article-card:hover { border-color: var(--accent); }
         top: 1.2rem;
         left: 3rem;
         right: -1.15rem;
-        border-top: 2px solid var(--hairline);
+        border-top: 2px solid var(--line);
     }
     .arc-steps li:last-child::after { display: none; }
-    .arc-steps strong { display: block; font-family: var(--display); font-size: 1.15rem; margin-bottom: 0.35rem; }
+    .arc-steps strong { display: block; font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.15rem; margin-bottom: 0.35rem; }
 }
 
 /* Phones: the map turns vertical so the labels stay readable */
