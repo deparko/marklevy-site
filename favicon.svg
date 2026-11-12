@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="Mark Levy">
-  <!-- Channel mark (YouTube / X @deskofone avatar, make_avatar_C.py) with the site's terracotta in place of amber. -->
-  <rect width="1000" height="1000" fill="#1A1A1A"/>
-  <rect x="309" y="235" width="45" height="531" fill="#B0542F"/>
-  <path fill="#F0EDE5" transform="translate(408.98 654.79) scale(0.22949 -0.22949)" d="M908 0V868Q908 973 924 1169Q865 879 849 828L725 360H507L381 828Q352 936 305 1169L312 1069Q319 964 319 868V0H99V1349H446L581 850Q596 803 619 619Q639 774 659 849L795 1349H1130V0Z"/>
+  <!-- The bar + "M" mark in Pacific Ink: navy tile, bright teal bar, light M (same as the @deskofone avatar). -->
+  <rect width="1000" height="1000" fill="#0F2233"/>
+  <rect x="309" y="235" width="45" height="531" fill="#4FB3B0"/>
+  <path fill="#E8EEF0" transform="translate(408.98 654.79) scale(0.22949 -0.22949)" d="M908 0V868Q908 973 924 1169Q865 879 849 828L725 360H507L381 828Q352 936 305 1169L312 1069Q319 964 319 868V0H99V1349H446L581 850Q596 803 619 619Q639 774 659 849L795 1349H1130V0Z"/>
 </svg>
