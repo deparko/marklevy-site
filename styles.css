@@ -205,7 +205,7 @@ section p + p { margin-top: 1.1em; }
     margin-bottom: 1.5rem;
 }
 
-.hero-accent { color: var(--teal); }
+.hero-accent { color: var(--teal); display: block; } /* the teal sentence always starts its own line */
 
 .hero-subtitle {
     font-size: 1.25rem;
@@ -901,3 +901,65 @@ a.article-card:hover { border-color: var(--teal); color: var(--ink); }
 }
 
 .insights-grid { margin-top: 2.25rem; }
+
+/* ==========================================================================
+   Phone fixes (2026-11-12): readable article figures, label floor, tap targets
+   ========================================================================== */
+
+/* Article figures: below 600px the wide SVG is replaced by a stacked HTML version
+   with the same words, so the text stays at body size instead of scaling to ~10px. */
+.figure-phone { display: none; }
+
+.ledger-phone { border-top: 3px solid var(--ink); }
+.ledger-phone .lp-head { font-family: var(--mono); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.06em;
+    color: var(--slate); padding: 0.7rem 0; border-bottom: 1px solid var(--line); margin: 0; }
+.ledger-phone dl { margin: 0; border-bottom: 3px solid var(--ink); }
+.ledger-phone .lp-row { padding: 0.9rem 0; }
+.ledger-phone .lp-row + .lp-row { border-top: 1px solid var(--line); }
+.ledger-phone dt { font-weight: 600; }
+.ledger-phone dd { margin: 0.3rem 0 0; color: var(--ink-soft); padding-left: 1.6rem; position: relative; }
+.ledger-phone dd .lp-arrow { position: absolute; left: 0; color: var(--teal); }
+.ledger-phone .lp-head .lp-arrow { color: var(--teal); }
+.ledger-phone .lp-foot { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.35rem;
+    line-height: 1.2; color: var(--teal); margin: 0; padding: 1rem 0 0; }
+
+.flow-phone { max-width: 22rem; }
+.page .flow-phone p, .page .ledger-phone p { margin: 0; } /* beats .page p + p */
+.page .flow-phone .fp-sub { margin-top: 0.15rem; }
+.ledger-phone .lp-head > span { display: block; }
+.fp-box { background: var(--surface-raised); border: 1px solid var(--line); border-radius: 4px; padding: 0.9rem 1rem; text-align: center; }
+.fp-box-dashed { background: transparent; border: 1.5px dashed var(--teal); }
+.fp-head { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; }
+.fp-head-accent { color: var(--teal); }
+.fp-sub { color: var(--ink-soft); font-size: 0.95rem; }
+.fp-legs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 0.7rem 0; }
+.fp-leg { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.4; text-align: center; }
+.fp-arrow { display: block; font-size: 1.4rem; line-height: 1.1; color: var(--ink); }
+.fp-legs-copy { grid-template-columns: 1fr; text-align: center; padding: 0.4rem 0; }
+.fp-arrow-accent { color: var(--teal); }
+
+@media (max-width: 600px) {
+    .page-figure .figure-wide { display: none; }
+    .page-figure .figure-phone { display: block; }
+    /* vertical "yes to paid" map: wait heads were ~12px at phone scale */
+    .map-v-head { font-size: 15px; }
+}
+
+@media (max-width: 700px) {
+    /* Label floor: mono caps read small; never under 0.85rem on a phone. */
+    .eyebrow, .package-step, .article-date, .page-verified { font-size: 0.85rem; }
+    .eyebrow { letter-spacing: 0.04em; }
+    .hero .eyebrow { letter-spacing: 0; margin-bottom: 0.8rem; } /* two lines, not three */
+
+    /* Tap targets ~37-40px. Nav wraps as a tidy 3 + 2 grid instead of orphaning "Contact". */
+    .nav { padding: 0.55rem 0; }
+    .nav-logo { padding: 0.35rem 0; }
+    .nav-links { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 1.4rem; }
+    .nav-links a { display: inline-block; padding: 0.45rem 0; }
+
+    /* Give back the height the taller nav and the teal-sentence break took, so the
+       booking button stays above the fold on a 390x844 phone (bottom at 809px). */
+    .hero { padding-top: 1.5rem; }
+    .hero-subtitle { margin-bottom: 1.2rem; }
+    .footer-nav a, .footer-links a { display: inline-block; padding: 0.55rem 0.2rem; }
+}
