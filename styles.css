@@ -1,7 +1,8 @@
 /* ==========================================================================
    marklevy.ai — Pacific Ink (light theme)
    Surface ground, ink text, teal accent, amber only on the booking button.
-   Light-only.
+   Light-only, with one deep statement band above the footer: the homepage
+   contact section (navy, on-deep text, bright teal links).
    ========================================================================== */
 
 :root {
@@ -18,6 +19,8 @@
     --on-deep: #E8EEF0;
     --on-deep-soft: #C7D3DA;
     --line: #C9D9DA;
+    --teal-bright: #4FB3B0;   /* teal on deep */
+    --line-deep: #2E4A5E;     /* hairlines on deep */
 
     /* Background of the band an element sits on — SVG knockouts fill with it. */
     --band: var(--surface);
@@ -519,6 +522,30 @@ a.article-card:hover { border-color: var(--teal); color: var(--ink); }
     margin-top: 0.9rem;
 }
 
+/* The one deep band (2026-11-21): homepage contact section on navy.
+   The id out-ranks `main > section:nth-of-type(even)`; only index.html has #contact.
+   Never #0E6E72 text on navy (2.69:1) — links use --teal-bright. */
+main > section#contact.contact {
+    --band: var(--deep);
+    --focus: var(--on-deep);
+    background-color: var(--deep);
+    color: var(--on-deep);
+    border-top: none;
+}
+#contact.contact h2,
+#contact.contact .newsletter h3 { color: var(--on-deep); }
+#contact.contact .contact-lead,
+#contact.contact .contact-alt,
+#contact.contact .newsletter p,
+#contact.contact .form-disclaimer { color: var(--on-deep-soft); }
+#contact.contact .contact-alt a { color: var(--teal-bright); text-decoration: underline; }
+#contact.contact .contact-alt a:hover { color: var(--on-deep); }
+#contact.contact .newsletter { border-top-color: var(--line-deep); }
+#contact.contact .newsletter input[type="email"] { border-color: var(--line-deep); }
+/* Subscribe: ink fill vanishes on navy, so it inverts. Never amber. */
+#contact.contact .newsletter .btn-primary { background-color: var(--on-deep); border-color: var(--on-deep); color: var(--ink); }
+#contact.contact .newsletter .btn-primary:hover { background-color: var(--teal-bright); border-color: var(--teal-bright); color: var(--ink); }
+
 /* Footer -------------------------------------------------------------------------------------- */
 
 .footer {
@@ -528,6 +555,7 @@ a.article-card:hover { border-color: var(--teal); color: var(--ink); }
     color: var(--on-deep);
     padding: 3rem 0;
     text-align: center;
+    border-top: 1px solid var(--line-deep); /* separates it from the contact band */
 }
 
 .footer-logo {
