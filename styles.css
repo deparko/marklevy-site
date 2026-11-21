@@ -963,3 +963,26 @@ a.article-card:hover { border-color: var(--teal); color: var(--ink); }
     .hero-subtitle { margin-bottom: 1.2rem; }
     .footer-nav a, .footer-links a { display: inline-block; padding: 0.55rem 0.2rem; }
 }
+
+/* Enlighten, Enable, Govern (2026-11-21) ----------------------------------------------- */
+.eeg { margin: 1.5rem 0 3rem; }
+.eeg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.eeg-step { border-top: 3px solid var(--ink); padding-top: 1rem; }
+.eeg-num { font-family: var(--mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.eeg-plain { font-weight: 600; color: var(--ink-soft); padding-bottom: 0.8rem; border-bottom: 1px solid var(--line); margin-bottom: 0.4rem; }
+.eeg-body { font-size: 1rem; padding-top: 0.7rem; }
+.eeg-stages { margin-top: 1.75rem; border-top: 2px solid var(--teal); padding-top: 0.9rem; }
+.eeg-stages-head { font-family: var(--mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.6rem; }
+.eeg-stages ol { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.eeg-stages li { font-family: var(--display); font-weight: 800; font-size: 1.1rem; color: var(--ink); background: var(--surface-raised); border: 1px solid var(--line); border-radius: 4px; padding: 0.6rem 0.8rem; }
+@media (max-width: 900px) {
+    .eeg-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .eeg-stages ol { grid-template-columns: 1fr 1fr; }
+}
+.page .eeg-band { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 3px solid var(--ink); }
+.page .eeg-band h2 { border-top: none; margin-top: 0.3rem; padding-top: 0; font-size: 2rem; margin-bottom: 0.3rem; }
+.page .eeg-band .eeg-plain { border-bottom: none; font-size: 1.15rem; }
+.page h3.eeg-sub { font-size: 1.3rem; max-width: 30ch; margin-top: 2.25rem; margin-bottom: 0.7rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.page .eeg-band + h3.eeg-sub { border-top: none; padding-top: 0.5rem; margin-top: 1rem; }
+.eeg-lead { font-size: 1.2rem; font-weight: 600; color: var(--ink); max-width: 40ch; margin-bottom: 1.5rem; }
+.eeg-step h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.55rem; line-height: 1.15; margin: 0 0 0.3rem; color: var(--ink); }
